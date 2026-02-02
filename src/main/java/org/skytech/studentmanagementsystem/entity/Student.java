@@ -2,10 +2,16 @@ package org.skytech.studentmanagementsystem.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.*;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "students")
 public class Student {

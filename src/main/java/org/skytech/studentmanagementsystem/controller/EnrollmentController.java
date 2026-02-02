@@ -3,25 +3,24 @@ package org.skytech.studentmanagementsystem.controller;
 import lombok.AllArgsConstructor;
 import org.skytech.studentmanagementsystem.entity.Enrollment;
 import org.skytech.studentmanagementsystem.service.EnrollmentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@AllArgsConstructor
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/enrollments")
 @CrossOrigin(origins = "*")
 public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;
-
-    @Autowired
-    public EnrollmentController(EnrollmentService enrollmentService) {
-        this.enrollmentService = enrollmentService;
-    }
+//
+//    @Autowired
+//    public EnrollmentController(EnrollmentService enrollmentService) {
+//        this.enrollmentService = enrollmentService;
+//    }
 
     @PostMapping
     public ResponseEntity<Enrollment> enrollStudent(

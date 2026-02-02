@@ -1,28 +1,30 @@
 package org.skytech.studentmanagementsystem.controller;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.skytech.studentmanagementsystem.entity.Student;
 import org.skytech.studentmanagementsystem.entity.StudentStatus;
+import org.skytech.studentmanagementsystem.repository.StudentRepository;
 import org.skytech.studentmanagementsystem.service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@AllArgsConstructor
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/students")
  @CrossOrigin(origins = "*")
 public class StudentController {
     private final StudentService studentService;
-
-    @Autowired
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
-    }
+    private final StudentRepository studentRepository;
+    //private final StudentMapper studentMapper;
+//
+//    @Autowired
+//    public StudentController(StudentService studentService) {
+//        this.studentService = studentService;
+//    }
 
     @GetMapping
     public ResponseEntity<List<Student>> getAllStudents() {
